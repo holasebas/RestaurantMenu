@@ -5,7 +5,7 @@ import {
     Image,
     TouchableOpacity
   } from 'react-native';
-import { Container, Button, Text, Icon, Right } from 'native-base';
+import { Container, Button, Text, Icon, Right, Content, Item, Input } from 'native-base';
 import Swiper from 'react-native-swiper';
 import { Actions } from 'react-native-router-flux';
 export default class singleDish extends Component {
@@ -22,8 +22,9 @@ export default class singleDish extends Component {
 
       
       <View style={{backgroundColor:'#FFF', flex:1}}>
+
         <View style={styles.wrapper}>
-            <Swiper  showsButtons={true} showsButtons={false} dotColor="#FFF" activeDotColor="#CCC">
+            <Swiper  showsButtons={true} showsButtons={false} dotColor="#FFF" activeDotColor="#2EFE2E">
                 <View style={styles.slide1}>
                   <Image style={{width: '100%', height: '100%'}} source={{ uri: 'https://picsum.photos/600/400/?random'}}/>
                 </View>
@@ -54,14 +55,29 @@ export default class singleDish extends Component {
               <Text style={styles.dishPrice}>$70.00</Text>
             </View>
          </View>
-         <Text style={styles.dishTxtDetail}>
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-         </Text>
+         <Content style={styles.contentWraper}> 
+          <Text style={styles.dishTxtDetail}>
+              It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+              in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </Text>
+
+          <View>
+            <Item regular>
+              <Input 
+                placeholder='Enter Quantity Here...'
+                keyboardType='numeric' 
+                />
+            </Item>
+            <Button full success>
+              <Text>ADD TO CART</Text>
+            </Button>
+          </View>
           
-
+          </Content> 
       </View>
+     
 
        
       
@@ -147,6 +163,9 @@ const styles = StyleSheet.create({
       fontSize: 20,
       color:'#01DF3A',
       fontWeight:'bold'
+    },
+    contentWraper:{
+        marginBottom:30
     }
     
 

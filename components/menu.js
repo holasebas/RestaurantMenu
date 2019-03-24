@@ -4,7 +4,8 @@ import {
     StyleSheet,
     ImageBackground,
     View,
-    TouchableHighlight
+    TouchableHighlight,
+    FlatList
   } from 'react-native';
 import { Container, Button, Text, Content, List, ListItem } from 'native-base';
 import { Actions } from 'react-native-router-flux';
@@ -12,7 +13,7 @@ export default class menu extends Component {
   render() {
     var items = [
 
-        {type:"Breakfast", shortDesc:"Lorem Ipsum has been the industrys standard", img:"https://picsum.photos/320/180/?random", dishes:['2','1'] },
+        {type:"Breakfast", shortDesc:"Lorem Ipsum has been the industrys standard", img:"https://picsum.photos/320/180/?random", dishes:['2','1','1','1','1','1'] },
         {type:"Dinner", shortDesc:"Lorem Ipsum has been the industrys standard", img:"https://picsum.photos/320/180/?random", dishes:['2','1']  },
         {type:"Sweets", shortDesc:"Lorem Ipsum has been the industrys standard", img:"https://picsum.photos/320/180/?random", dishes:['2','1']  },
         {type:"Drinks", shortDesc:"Lorem Ipsum has been the industrys standard", img:"https://picsum.photos/320/180/?random", dishes:['2','1']  },
@@ -23,8 +24,11 @@ export default class menu extends Component {
         <Container>
   
         <Content>
-          <List dataArray={items}
-            renderRow={(item) =>
+          <FlatList
+          
+          data={items}
+          keyExtractor={(item, index) => 'key'+index}
+          renderItem={({item}) => 
               <TouchableHighlight onPress={() => {
                 Actions.dishes({dishes:item.dishes})
                }}>
@@ -39,7 +43,7 @@ export default class menu extends Component {
                 </TouchableHighlight >
               
             }>
-          </List>
+          </FlatList>
         </Content>
       </Container>
     );
