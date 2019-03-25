@@ -27,10 +27,10 @@ export default class Intro extends Component {
     return (
       <Container>
         
-        <Swiper style={styles.wrapper} showsButtons={false}>
+        <Swiper style={styles.wrapper} showsButtons={false} activeDotColor="#75CC8D">
             
             <ImageBackground style={styles.slide1}
-                source={{ uri: 'https://picsum.photos/800/1200/?random' }}
+                source={require('./src/slide1.jpg')}
             >
                 <Text style={styles.tittle}>Lorem Ipsum</Text>
                 <Text style={styles.section}> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Text>
@@ -39,7 +39,7 @@ export default class Intro extends Component {
 
             
             <ImageBackground style={styles.slide2}
-                source={{ uri: 'https://picsum.photos/800/1200/?random' }}
+                source={require('./src/slide2.jpg')}
             >
                 <Text style={styles.tittle}>Lorem Ipsum</Text>
                 <Text style={styles.section}> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Text>
@@ -47,7 +47,7 @@ export default class Intro extends Component {
 
 
             <ImageBackground style={styles.slide3}
-                source={{ uri: 'https://picsum.photos/800/1200/?random' }}
+                source={require('./src/slide3.jpg')}
             >
                 <Text style={styles.tittle}>Lorem Ipsum</Text>
                 <Text style={styles.section}> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Text>

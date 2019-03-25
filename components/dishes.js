@@ -18,11 +18,12 @@ export default class Dishes extends Component {
 
   render() {
     var items = [
-        'Simon Mignolet',
-        'Nathaniel Clyne',
-        'Dejan Lovren',
-        'Mama Sakho',
-        'Emre Can'
+        {img:require('./src/dish1.jpg')},
+        {img:require('./src/dish2.jpg')},
+        {img:require('./src/dish3.jpg')},
+        {img:require('./src/dish4.jpg')},
+        {img:require('./src/dish5.jpg')}
+        
       ];
     
    
@@ -33,7 +34,7 @@ export default class Dishes extends Component {
             
 
                 <FlatList
-                data={this.props.dishes}
+                data={items}
                 keyExtractor={(item, index) => 'key'+index}
                 renderItem={({item}) => 
                 <ListItem thumbnail onPress={() => {
@@ -42,7 +43,7 @@ export default class Dishes extends Component {
                                 <Left>
 
                            
-                                <Image style={{width:100, height:100}} source={{ uri: 'https://picsum.photos/200/?random'}}/> 
+                                <Image style={{width:100, height:100}} source={item.img}/> 
                                 
                                 </Left>
                                 <Body style={styles.DishBodyWraper}>
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
     DishPriceTxt:{
         flex:1,
         //borderWidth:1,
-        color:"#01DF3A",
+        color:"#75CC8D",
         fontWeight:"500"    
     }
     

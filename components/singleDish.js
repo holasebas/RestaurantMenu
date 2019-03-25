@@ -24,15 +24,15 @@ export default class singleDish extends Component {
       <View style={{backgroundColor:'#FFF', flex:1}}>
 
         <View style={styles.wrapper}>
-            <Swiper  showsButtons={true} showsButtons={false} dotColor="#FFF" activeDotColor="#2EFE2E">
+            <Swiper  showsButtons={true} showsButtons={false} dotColor="#FFF" activeDotColor="#75CC8D">
                 <View style={styles.slide1}>
-                  <Image style={{width: '100%', height: '100%'}} source={{ uri: 'https://picsum.photos/600/400/?random'}}/>
+                  <Image style={{width: '100%', height: '100%'}} source={require('./src/single1.jpg')}/>
                 </View>
                 <View style={styles.slide2}>
-                  <Image style={{width: '100%', height: '100%'}} source={{ uri: 'https://picsum.photos/600/400/?random'}}/>
+                  <Image style={{width: '100%', height: '100%'}} source={require('./src/single2.jpg')}/>
                 </View>
                 <View style={styles.slide3}>
-                  <Image style={{width: '100%', height: '100%'}} source={{ uri: 'https://picsum.photos/600/400/?random'}}/> 
+                  <Image style={{width: '100%', height: '100%'}} source={require('./src/single3.jpg')}/> 
                 </View>
             </Swiper>
             <View style={styles.topSlideInfo}>
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
       alignItems:'center',
     },
     backIcon:{
-      color:'#FFF',
+      color:'#75CC8D',
     },
     heartButtomContainer:{
       flex:1,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
       alignItems:'center'
     },
     heartIcon:{
-      color:'#FFF',
+      color:'#75CC8D',
     },
     dishName:{
       padding:10,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
       padding:5,
       color: '#fff',
       fontSize: 20,
-      color:'#01DF3A',
+      color:'#75CC8D',
       fontWeight:'bold'
     },
     contentWraper:{

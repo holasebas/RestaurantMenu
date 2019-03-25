@@ -14,7 +14,7 @@ import Intro from './components/intro';
 import Menu from './components/menu';
 import Dishes from './components/dishes';
 import SingleDish from './components/singleDish';
-
+import Cart from './components/cart';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,12 +27,13 @@ const instructions = Platform.select({
 export default class App extends Component {
   render() {
     return (
-      <Router>
+      <Router >
       
-        <Stack key="root">
-          <Scene key="intro" component={Intro} title="Intro"  hideNavBar />
-          <Scene key="menu" component={Menu} title="Menu"  initial/>
-          <Scene key="dishes" component={Dishes} title=""  />
+        <Stack key="root" >
+          <Scene key="intro" component={Intro} title="Intro" initial  hideNavBar />
+          <Scene key="menu" component={Menu} title="Menu"   hideNavBar/>
+          <Scene key="dishes" component={Dishes} title="" tintColor ="#75CC8D" navigationBarStyle={{ backgroundColor: '#fff' }}  />
+          <Scene key="cart" component={Cart} title="" tintColor="#75CC8D"  />
           <Scene key="singleDish" component={SingleDish} title="" navTransparent={true} hideNavBar />
         </Stack>
         
