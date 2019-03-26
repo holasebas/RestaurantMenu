@@ -7,7 +7,7 @@ import {
   } from 'react-native';
 import { Container, Button, Text, Icon } from 'native-base';
 import Swiper from 'react-native-swiper';
-import { Actions } from 'react-native-router-flux';
+import { Actions, ActionConst } from 'react-native-router-flux';
 
 export default class Intro extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ export default class Intro extends Component {
       }
     
       onPress = () => {
-       Actions.menu()
+       Actions.menu({type: ActionConst.RESET})
       }
 
 

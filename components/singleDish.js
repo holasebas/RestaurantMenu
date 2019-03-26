@@ -12,7 +12,8 @@ export default class singleDish extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { heart: false }
+    this.state = { heart: this.props.fav ? true : false }
+    
   }
   toggleHeart(){
     this.setState({heart:!this.state.heart})

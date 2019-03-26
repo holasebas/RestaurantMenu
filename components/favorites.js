@@ -10,7 +10,7 @@ import {
   } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-export default class Dishes extends Component {
+export default class Favorites extends Component {
 
    
 
@@ -19,9 +19,12 @@ export default class Dishes extends Component {
     var items = [
         {img:require('./src/dish1.jpg')},
         {img:require('./src/dish2.jpg')},
-        {img:require('./src/dish3.jpg')},
+        {img:require('./src/dish5.jpg')},
         {img:require('./src/dish4.jpg')},
-        {img:require('./src/dish5.jpg')}
+        {img:require('./src/dish5.jpg')},
+        {img:require('./src/dish5.jpg')},
+        {img:require('./src/dish4.jpg')},
+        {img:require('./src/dish1.jpg')}
         
       ];
     
@@ -37,12 +40,12 @@ export default class Dishes extends Component {
                 keyExtractor={(item, index) => 'key'+index}
                 renderItem={({item}) => 
                 <ListItem thumbnail onPress={() => {
-                                Actions.singleDish({dish:item})
+                                Actions.singleDish({fav:true})
                             }} style={styles.DishItemWraper}>
                                 <Left>
 
                            
-                                <Image style={{width:100, height:100}} source={item.img}/> 
+                                <Thumbnail style={{width:50, height:50}} source={item.img}/> 
                                 
                                 </Left>
                                 <Body style={styles.DishBodyWraper}>
@@ -55,11 +58,7 @@ export default class Dishes extends Component {
                                         <Text note numberOfLines={2}>Its time to build a difference and innovate...</Text>
                                     </View>
 
-                                    <View style={styles.DishPriceWraper}>
-                                        <Text   numberOfLines={1} style={styles.DishPriceTxt}>$ 100.00 </Text>
-                                        <Icon name={'ios-heart'} style={styles.DishHeartIcon}  />
-                                        <Text  note numberOfLines={1} >1562 </Text>
-                                    </View>
+                                   
 
                                 </Body>
                                 <Right style={styles.DishRightWraper}>
@@ -103,17 +102,13 @@ const styles = StyleSheet.create({
     },
     DishTitleWraper:{
         //borderWidth:1,
-        height:30
+        height:20
     },
     DishDescWraper:{
         //borderWidth:1,
-        height:50
+        height:30
     },
-    DishPriceWraper:{
-        //borderWidth:1,
-        height:20,
-        flexDirection:'row'
-    },
+  
     DishHeartIcon:{
         //borderWidth:1,
         color:'#F7ABAD',
