@@ -72,6 +72,8 @@ import com.android.build.OutputFile
  * ]
  */
 
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 project.ext.react = [
     entryFile: "index.js"
 ]
