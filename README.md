@@ -1,8 +1,8 @@
 # RestaurantMenu
 Restaurant Menu React Native App
 
-# Example Video
-https://youtu.be/RmoJ6U109kA# Usage
+# Sample Video
+https://youtu.be/RmoJ6U109kA
 
 # Usage
   1. Clone
